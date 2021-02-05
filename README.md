@@ -1,20 +1,20 @@
 # simuladorApi
 Simular camadas feitas pela api
 
-install dependencies
+# install dependencies
 yarn 
-or
+# or
 npm i
 
-development mode
+# development mode
 yarn dev
-or
+# or
 npm dev
 
-production
+# production
 yarn biuld
 yarn start
-or
+# or
 npm biuld
 npm start
 
