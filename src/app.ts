@@ -27,10 +27,5 @@ routes.post('/', async (req, res) => {
 
 
 app.use(routes)
-app.use((error, request, response, next) => {
-  console.log(error)
-
-  return response.status(500).json({ message: 'Internal server error' })
-})
 
 export { app }
