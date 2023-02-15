@@ -33,6 +33,10 @@ routes.post('/in', async (req, res) => {
 
 routes.get('/in', async (req, res) => {
   console.log(req.body)
+  console.log(req.query)
+  console.log(req?.headers['x-forwarded-for'] || req.connection.remoteAddress)
+  console.log(req?.headers['user-agent'])
+  console.log(req.url)
 
   res.status(200).json({ message: 'ok' })
 })
