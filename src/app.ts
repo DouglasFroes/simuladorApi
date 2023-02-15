@@ -25,6 +25,18 @@ routes.post('/', async (req, res) => {
   }
 })
 
+routes.post('/in', async (req, res) => {
+  console.log(req.body)
+
+  res.status(200).json({ message: 'ok' })
+})
+
+routes.get('/in', async (req, res) => {
+  console.log(req.body)
+
+  res.status(200).json({ message: 'ok' })
+})
+
 
 app.use(routes)
 
