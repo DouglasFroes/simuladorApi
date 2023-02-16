@@ -32,9 +32,6 @@ routes.post('/', async (req, res) => {
 
 routes.post('/in', async (req, res) => {
   console.log(req.body)
-  console.log(req.query)
-  console.log(req?.rawHeaders)
-
   console.log(req.url)
 
   res.status(200).json({ message: 'ok' })
