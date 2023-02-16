@@ -11,6 +11,9 @@ const routes = Router()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({
+  extended: true
+}))
 
 
 
@@ -31,7 +34,7 @@ routes.post('/in', async (req, res) => {
   console.log(req.body)
   console.log(req.query)
   console.log(req?.rawHeaders)
-  
+
   console.log(req.url)
 
   res.status(200).json({ message: 'ok' })
