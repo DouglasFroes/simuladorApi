@@ -10,9 +10,7 @@ const app = express()
 const routes = Router()
 
 app.use(cors())
-app.use(express.json({
-  type: ['application/json', 'application/x-www-form-urlencoded']
-}))
+app.use(express.json())
 
 
 
@@ -32,20 +30,14 @@ routes.post('/', async (req, res) => {
 routes.post('/in', async (req, res) => {
   console.log(req.body)
   console.log(req.query)
-  console.log(req?.headers['x-forwarded-for'] || req.connection.remoteAddress)
-  console.log(req?.headers['user-agent'])
+  console.log(req?.rawHeaders)
+  
   console.log(req.url)
 
   res.status(200).json({ message: 'ok' })
 })
 
 routes.get('/in', async (req, res) => {
-  console.log(req.body)
-  console.log(req.query)
-  console.log(req?.headers['x-forwarded-for'] || req.connection.remoteAddress)
-  console.log(req?.headers['user-agent'])
-  console.log(req.url)
-
   res.status(200).json({ message: 'ok' })
 })
 
