@@ -4,12 +4,15 @@ import dotenv from 'dotenv'
 import fetch from 'node-fetch'
 import 'express-async-errors'
 
+import bodyParser from 'body-parser'
+
 dotenv.config()
 const app = express()
 const routes = Router()
 
 app.use(cors())
-app.use(express.json())
+// app.use(express.json())
+app.use(bodyParser.json())
 
 
 routes.post('/', async (req, res) => {
