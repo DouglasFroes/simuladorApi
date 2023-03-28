@@ -33,11 +33,15 @@ routes.post('/', async (req, res) => {
 routes.post('/in', async (req, res) => {
   console.log(req.body)
   console.log(req.url)
+  // get ip
+  console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress)
 
   res.status(200).json({ message: 'ok' })
 })
 
 routes.get('/in', async (req, res) => {
+  console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+
   res.status(200).json({ message: 'ok' })
 })
 
